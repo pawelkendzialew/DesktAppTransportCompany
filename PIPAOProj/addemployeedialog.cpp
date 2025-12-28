@@ -21,7 +21,7 @@ void AddEmployeeDialog::on_saveButton_clicked()
     QSqlQuery query;
     query.prepare(
         "INSERT INTO Users (Login, Password, Role) "
-        "VALUES (:l, :p, 'Pracownik')"
+        "VALUES (:l, :p, 'EMPLOYEE')"
         );
     query.bindValue(":l", ui->loginEdit->text());
     query.bindValue(":p", ui->passwordEdit->text());
