@@ -20,7 +20,7 @@ bool databasemanager::connect()
     db.setDatabaseName(dbPath + "/fleet.db");
 
     if (!db.open()) {
-        qDebug() << " Błąd bazy:" << db.lastError().text();
+        qDebug() << " Base Error:" << db.lastError().text();
         return false;
     }
 
@@ -31,7 +31,6 @@ void databasemanager::initDatabase()
 {
     QSqlQuery query;
 
-    // Włączenie kluczy obcych (SQLite)
     query.exec("PRAGMA foreign_keys = ON;");
 
     // Tabela użytkowników

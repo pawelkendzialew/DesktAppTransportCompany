@@ -56,7 +56,7 @@ void AddOrderDialog::on_saveButton_clicked()
     query.bindValue(":e", ui->employeeCombo->currentData());
 
     if (!query.exec()) {
-        QMessageBox::warning(this, "Błąd", "Nie można dodać zlecenia");
+        QMessageBox::warning(this, "Error", "Unable to add the job");
         return;
     }
 

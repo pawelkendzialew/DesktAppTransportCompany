@@ -22,7 +22,7 @@ void LoginWindow::on_loginButton_clicked()
     QString password = ui->passwordEdit->text();
 
     if (login.isEmpty() || password.isEmpty()) {
-        QMessageBox::warning(this, "Błąd", "Uzupełnij wszystkie pola");
+        QMessageBox::warning(this, "Error", "Fill all the gaps");
         return;
     }
 
@@ -43,8 +43,8 @@ void LoginWindow::on_loginButton_clicked()
     } else {
         QMessageBox::warning(
             this,
-            "Błąd logowania",
-            "Nieprawidłowy login lub hasło"
+            "Log in Error",
+            "Uncorrect login or password"
             );
     }
 }

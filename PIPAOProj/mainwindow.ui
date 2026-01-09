@@ -18,7 +18,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Samochody">
        <attribute name="title">
@@ -31,11 +31,25 @@
            <widget class="QTableView" name="vehiclesTable"/>
           </item>
           <item>
-           <widget class="QPushButton" name="addvehicleButton">
-            <property name="text">
-             <string>Add Car</string>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <item>
+             <widget class="QPushButton" name="deleteVehicleButton">
+              <property name="styleSheet">
+               <string notr="true">background-color: #ff4444; color: white;</string>
+              </property>
+              <property name="text">
+               <string>Delete Car</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="addvehicleButton">
+              <property name="text">
+               <string>Add Car</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </item>
@@ -52,11 +66,25 @@
            <widget class="QTableView" name="employeesTable"/>
           </item>
           <item>
-           <widget class="QPushButton" name="addEmployeeButton">
-            <property name="text">
-             <string>Add Employee</string>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <item>
+             <widget class="QPushButton" name="deleteEmployeeButton">
+              <property name="styleSheet">
+               <string notr="true">background-color: #ff4444; color: white;</string>
+              </property>
+              <property name="text">
+               <string>Delete Employee</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="addEmployeeButton">
+              <property name="text">
+               <string>Add Employee</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </item>
@@ -70,20 +98,66 @@
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="QTableView" name="ordersTable">
-            <property name="sizeAdjustPolicy">
-             <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
+           <widget class="QTabWidget" name="ordersTabWidget">
+            <property name="currentIndex">
+             <number>1</number>
             </property>
-            <property name="editTriggers">
-             <set>QAbstractItemView::EditTrigger::AnyKeyPressed|QAbstractItemView::EditTrigger::DoubleClicked|QAbstractItemView::EditTrigger::EditKeyPressed</set>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="addOrderButton">
-            <property name="text">
-             <string>Add job</string>
-            </property>
+            <widget class="QWidget" name="tab">
+             <attribute name="title">
+              <string>Active Jobs</string>
+             </attribute>
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <item>
+               <widget class="QTableView" name="activeOrdersTable"/>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_6">
+                <item>
+                 <widget class="QPushButton" name="refreshActiveButton">
+                  <property name="text">
+                   <string>Refresh</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="addOrderButton">
+                  <property name="text">
+                   <string>Add Job</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="tab_2">
+             <attribute name="title">
+              <string>Done Jobs</string>
+             </attribute>
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <item>
+               <widget class="QTableView" name="completedOrdersTable"/>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_7">
+                <item>
+                 <widget class="QPushButton" name="refreshCompleteButton">
+                  <property name="text">
+                   <string>Refresh</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="completeStatusLabel">
+                  <property name="text">
+                   <string>Overall Done: 0</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
            </widget>
           </item>
          </layout>

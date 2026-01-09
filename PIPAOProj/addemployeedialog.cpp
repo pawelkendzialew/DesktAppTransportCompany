@@ -27,7 +27,7 @@ void AddEmployeeDialog::on_saveButton_clicked()
     query.bindValue(":p", ui->passwordEdit->text());
 
     if (!query.exec()) {
-        QMessageBox::warning(this, "Błąd", "Nie można dodać pracownika");
+        QMessageBox::warning(this, "Error", "Unable to add employee");
         return;
     }
 

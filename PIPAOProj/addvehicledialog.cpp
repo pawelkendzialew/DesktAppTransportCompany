@@ -29,7 +29,7 @@ void AddvehicleDialog::on_saveButton_clicked()
     query.bindValue(":s", ui->statusCombo->currentText());
 
     if (!query.exec()) {
-        QMessageBox::warning(this, "Błąd", "Nie można dodać pojazdu");
+        QMessageBox::warning(this, "Error", "Unable to add vehicle");
         return;
     }
 

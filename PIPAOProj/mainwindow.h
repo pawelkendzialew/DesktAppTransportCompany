@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QSqlTableModel>
+#include <QSqlQueryModel>
 #include <QDateTime>
 
 QT_BEGIN_NAMESPACE
@@ -37,6 +38,14 @@ private slots:
 
     void on_completeOrderButton_clicked();
 
+    void on_refreshActiveButton_clicked();
+
+    void on_refreshCompleteButton_clicked();
+
+    void on_deleteVehicleButton_clicked();
+
+    void on_deleteEmployeeButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlTableModel *vehiclesModel;
@@ -50,8 +59,16 @@ private:
     int selectedOrderId;
     QDateTime orderStartTime;
 
+    QSqlQueryModel *activeOrdersModel;      // Model dla aktywnych zlecen
+    QSqlQueryModel *completedOrdersModel;   // Model dla zakonczonych zlecen
+
+
     void loadMyJobs();
     void updateOrderButtons();
     QString getOrderStatusText(const QString& status);
+
+    void loadActiveOrders();                // Zaladuj aktywne zlecenia
+    void loadCompletedOrders();             // Zaladuj zakonczone zlecenia
+    QString formatDuration(int seconds);    // Sformatuj czas trwania
 };
 #endif // MAINWINDOW_H
