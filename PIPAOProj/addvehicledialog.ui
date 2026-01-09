@@ -13,80 +13,74 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>0</y>
-     <width>221</width>
-     <height>204</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>Brand</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="brandEdit"/>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string>Model</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="modelEdit"/>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_3">
-      <property name="text">
-       <string>Plates</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="plateEdit"/>
-    </item>
-    <item>
-     <widget class="QComboBox" name="statusCombo">
-      <property name="currentText">
-       <string>AVAILABLE</string>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <item>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label">
        <property name="text">
+        <string>Brand</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="brandEdit"/>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Model</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="modelEdit"/>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Plates</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="plateEdit"/>
+     </item>
+     <item>
+      <widget class="QComboBox" name="statusCombo">
+       <property name="currentText">
         <string>AVAILABLE</string>
        </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>UNAVAILABLE</string>
+       <property name="currentIndex">
+        <number>0</number>
        </property>
-      </item>
-      <item>
+       <item>
+        <property name="text">
+         <string>AVAILABLE</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>UNAVAILABLE</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>SERVICE</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="saveButton">
        <property name="text">
-        <string>SERVICE</string>
+        <string>Save</string>
        </property>
-      </item>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="saveButton">
-      <property name="text">
-       <string>Save</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

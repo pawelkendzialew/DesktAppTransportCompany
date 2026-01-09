@@ -20,9 +20,9 @@ int main(int argc, char *argv[])
     MainWindow mainWindow;
 
     QObject::connect(&login, &LoginWindow::loginSuccess,
-                     [&](const QString& role)
+                     [&](const QString& role, int userId)
                      {
-                         mainWindow.setRole(role);
+                         mainWindow.setRole(role, userId);
                          mainWindow.show();
                      });
 

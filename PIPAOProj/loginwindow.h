@@ -16,7 +16,7 @@ public:
     ~LoginWindow();
 
 signals:
-    void loginSuccess(const QString& role);
+    void loginSuccess(const QString& role, int userId);
 
 private slots:
     void on_loginButton_clicked();

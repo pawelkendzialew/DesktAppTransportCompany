@@ -58,17 +58,20 @@ void databasemanager::initDatabase()
     if (!query.exec(
             "CREATE TABLE IF NOT EXISTS Orders ("
             "Id INTEGER PRIMARY KEY AUTOINCREMENT,"
-            "StartDate TEXT NOT NULL,"
-            "Note TEXT,"
-            "Status TEXT NOT NULL,"
+            "StartDate TEXT NOT NULL,"              // Data planowanego startu (od kierownika)
+            "Note TEXT,"                            // Notatka kierownika
+            "Status TEXT NOT NULL,"                 // NEW, ACCEPTED, REJECTED, IN_PROGRESS, COMPLETED
             "VehicleId INTEGER NOT NULL,"
             "EmployeeId INTEGER NOT NULL,"
+            "ActualStartTime TEXT,"                 // Kiedy pracownik wystartował zlecenie
+            "EndTime TEXT,"                         // Kiedy pracownik zakończył
+            "Duration INTEGER,"                     // Czas trwania w sekundach
+            "EmployeeNote TEXT,"                    // Notatka pracownika po zakończeniu
             "FOREIGN KEY(VehicleId) REFERENCES Vehicles(Id),"
             "FOREIGN KEY(EmployeeId) REFERENCES Users(Id)"
             ")"
             )) {
     }
-
 
     query.exec(
         "INSERT OR IGNORE INTO Users (Login, Password, Role) VALUES "

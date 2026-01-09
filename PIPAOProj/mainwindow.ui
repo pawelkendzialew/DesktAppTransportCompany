@@ -18,93 +18,151 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="Samochody">
        <attribute name="title">
         <string>Cars</string>
        </attribute>
-       <widget class="QWidget" name="layoutWidget">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>631</width>
-          <height>371</height>
-         </rect>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <item>
-          <widget class="QTableView" name="vehiclesTable"/>
-         </item>
-         <item>
-          <widget class="QPushButton" name="addvehicleButton">
-           <property name="text">
-            <string>Add Car</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QTableView" name="vehiclesTable"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="addvehicleButton">
+            <property name="text">
+             <string>Add Car</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="Pracownicy">
        <attribute name="title">
         <string>Employees</string>
        </attribute>
-       <widget class="QWidget" name="layoutWidget">
-        <property name="geometry">
-         <rect>
-          <x>5</x>
-          <y>11</y>
-          <width>641</width>
-          <height>381</height>
-         </rect>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <item>
-          <widget class="QTableView" name="employeesTable"/>
-         </item>
-         <item>
-          <widget class="QPushButton" name="addEmployeeButton">
-           <property name="text">
-            <string>Add Employee</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QTableView" name="employeesTable"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="addEmployeeButton">
+            <property name="text">
+             <string>Add Employee</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="Zlecenia">
        <attribute name="title">
         <string>Jobs</string>
        </attribute>
-       <widget class="QWidget" name="layoutWidget">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>10</y>
-          <width>641</width>
-          <height>381</height>
-         </rect>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_3">
-         <item>
-          <widget class="QTableView" name="ordersTable"/>
-         </item>
-         <item>
-          <widget class="QPushButton" name="addOrderButton">
-           <property name="text">
-            <string>Add job</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QTableView" name="ordersTable">
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
+            </property>
+            <property name="editTriggers">
+             <set>QAbstractItemView::EditTrigger::AnyKeyPressed|QAbstractItemView::EditTrigger::DoubleClicked|QAbstractItemView::EditTrigger::EditKeyPressed</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="addOrderButton">
+            <property name="text">
+             <string>Add job</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="MojeZlecenie">
        <attribute name="title">
         <string>My Job</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QTableView" name="myJobsTable">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Szczegóły zlecenia</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QPushButton" name="acceptOrderButton">
+               <property name="text">
+                <string>Przyjmij</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="rejectOrderButton">
+               <property name="text">
+                <string>Odrzuć</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="startOrderButton">
+               <property name="text">
+                <string>Rozpocznij</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="completeOrderButton">
+               <property name="text">
+                <string>Zakończ</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QLabel" name="orderStatusLabel">
+             <property name="text">
+              <string>Status</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>

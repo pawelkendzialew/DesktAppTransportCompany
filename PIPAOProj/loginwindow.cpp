@@ -28,15 +28,16 @@ void LoginWindow::on_loginButton_clicked()
 
     QSqlQuery query;
     query.prepare(
-        "SELECT Role FROM Users WHERE Login = :login AND Password = :password"
+        "SELECT Id, Role FROM Users WHERE Login = :login AND Password = :password"
         );
     query.bindValue(":login", login);
     query.bindValue(":password", password);
 
     if (query.exec() && query.next()) {
-        QString role = query.value(0).toString();
+        int userId = query.value("Id").toInt();
+        QString role = query.value("Role").toString();
 
-        emit loginSuccess(role);
+        emit loginSuccess(role, userId);
         this->close();
 
     } else {
